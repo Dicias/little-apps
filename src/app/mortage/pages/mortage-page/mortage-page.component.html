@@ -1,0 +1,133 @@
+<div class="flex flex-col bg-amber-200 h-screen justify-center items-center jakarta">
+
+  <div class="flex md:flex-row flex-col relative bg-blue-100 h-4/5 w-4/5 shadow-2xl items-center justify-center">
+
+    <div class="container-calculator relative flex flex-col
+      bg-white w-1/3 h-3/4 shadow-xl
+      border border-slate-300
+      items-center p-8 mr-8 ">
+
+      <section class=" flex flex-row min-w-full justify-between relative mb-6 ">
+        <h2 class="text-xl font-bold">Mortage Calculator</h2>
+        <p class="font-thin underline underline-offset-2 ">clear all</p>
+      </section>
+
+      <section class="flex flex-col flex-1 ">
+        <form [formGroup]="myForm" (ngSubmit)="calculate()">
+          <label class="font-light text-sm">
+            Mortgage Amount
+          </label>
+
+          <div class="flex items-end my-2">
+            <select formControlName="amountType" class="amount-type h-full min-w-20 border-0 bg-transparent
+            pl-2 pr-9 py-[9px] text-gray-800 focus:ring-2 focus:ring-inset
+          focus:ring-blue-300 sm:text-sm text-lg relative " >
+                <option value="22">€</option>
+                <option value="20">$$</option>
+                <option value="1">$</option>
+            </select>
+            <input type="text" formControlName="amount" class="amount-input outline-none block w-3/4
+             py-1.5 pl-3 pr-20
+           text-gray-900  placeholder:text-gray-400
+            sm:text-sm sm:leading-6 text-start font-semibold
+            absolute right-7" placeholder="0.00" value="300,000" />
+          </div>
+
+
+          <div class="flex flex-row my-4">
+            <div>
+          <label class="font-light text-sm">
+            Mortgage Term
+          </label>
+
+          <div class="flex items-end my-2">
+
+            <input type="text" formControlName="term" class="term-input outline-none block w-2/3  py-1.5 pl-3
+            text-gray-900  placeholder:text-gray-400
+            sm:text-sm sm:leading-6 text-start font-semibold
+            " placeholder="0.00" value="25" />
+
+            <select formControlName="termType" class="term-type h-full w-16 border-0 bg-transparent
+            pl-2 pr-9 py-[9px] text-gray-800 focus:ring-2 focus:ring-inset
+          focus:ring-blue-300 sm:text-sm text-lg relative text-end  " >
+                <option value="Y">Years</option>
+                <option value="M">Months</option>
+                <option value="D">Days</option>
+            </select>
+
+          </div>
+
+            </div>
+
+            <div>
+          <label class="font-light text-sm ml-4">
+            Interest Rate
+          </label>
+
+          <div class="flex items-end my-2 ml-4">
+
+            <input type="text" formControlName="interestRate" class="interest-input outline-none block w-2/3  py-1.5 pl-3
+            text-gray-900  placeholder:text-gray-400
+            sm:text-sm sm:leading-6 text-start font-semibold
+            " placeholder="0.00" value="25" />
+
+            <select class="interest-type h-full w-16 border-0 bg-transparent
+            pl-2 pr-9 py-[9px] text-gray-800 focus:ring-2 focus:ring-inset
+          focus:ring-blue-300 sm:text-sm text-lg relative text-end  " >
+                <option value="%">%</option>
+            </select>
+
+          </div>
+
+            </div>
+
+        </div>
+          <label class="font-light text-sm">
+            Mortage Type
+          </label>
+          <br>
+
+          <div class="radio-container my-2">
+            <input formControlName="mortgageType" type="radio" id="repayments" value="Repayment" name="mortgageType" class="radio-input" />
+            <label for="repayments" class="radio-label">Repayment</label>
+          </div>
+          <div class="radio-container mb-4">
+            <input formControlName="mortgageType" type="radio" id="interest" value="Interest Only" name="mortgageType" class="radio-input" />
+            <label for="interest" class="radio-label">Interest Only</label>
+          </div>
+
+          <br>
+          <button type="submit" class="btn-submit flex mt-auto"><type-input /> Calculate Repayments</button>
+
+        </form>
+
+      </section>
+
+    </div>
+
+    <div class="container-result relative flex flex-col p-8
+     bg-[#122d3c] text-white
+      w-1/3 h-3/4 shadow-2xl
+      border-2 border-green-800">
+
+    <section class="flex flex-col mb-5">
+      <h2 class=" text-2xl mb-5">Your results</h2>
+      <p class="text-sm font-thin">Your results are shown below based on the information you provided.To adjust
+        the result, edit the form and click "calculate repayments" again.
+      </p>
+    </section>
+
+    <section class="container-totals bg-[#0e2431] h-1/2 p-8 rounded-md">
+      <p class="text-sm font-thin">Your monthly repayments</p>
+      <h2 class="text-4xl my-5 font-bold text-[#d6d934]"> ${{repayments}} </h2>
+      <hr>
+      <p class="text-sm font-thin mt-5 mb-2">Total you'll repay over the term</p>
+      <b>{{total}}</b>
+    </section>
+
+  </div>
+
+  </div>
+
+
+</div>
