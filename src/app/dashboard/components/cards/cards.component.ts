@@ -16,6 +16,9 @@ export class CardsComponent {
   @Input()
   public path = '';
 
+  @Input()
+  public image = '';
+
   navigate():void {
     this.router.navigateByUrl(this.path);
   }

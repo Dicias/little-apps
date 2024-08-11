@@ -1,11 +1,10 @@
 <div class=" flex w-full h-screen justify-center items-center">
 
-<div class=" space-x-2 bg-slate-200 w-2/3 h-3/4 flex flex-col justify-center items-center rounded-lg">
+<div class=" cards-container p-10  bg-slate-200 w-3/4 h-auto flex flex-col justify-center items-center rounded-lg">
 
 
-  <div class="grid grid-cols-4 gap-4 p-5">
-    <dashboard-cards *ngFor="let proyect of proyects" [title]="proyect.title" [path]="proyect.path" />
-  </div>
+    <dashboard-cards *ngFor="let proyect of proyects" [title]="proyect.title" [path]="proyect.path" [image]="proyect.image"  />
+
 
 
 </div>
