@@ -1,0 +1,7 @@
+.back-btn {
+  padding: 10px;
+  border-radius: 20px;
+  color: whitesmoke;
+  background: rgb(0,9,45);
+  background: linear-gradient(90deg, rgba(0,9,45,1) 0%, rgba(9,11,63,1) 35%, rgba(17,0,43,1) 43%, rgba(26,13,31,1) 100%);
+}

@@ -5,6 +5,7 @@ import { MortageRoutingModule } from './mortage-routing.module';
 import { MortagePageComponent } from './pages/mortage-page/mortage-page.component';
 import { TypeInputComponent } from './components/type-input/type-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from "../shared/shared.module";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MortageRoutingModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    SharedModule,
+]
 })
 export class MortageModule { }
